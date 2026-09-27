@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fusion Store | Created by Ravenff</title>
+
+<style>
+:root{
+  --bg:#07070a;
+  --bg2:#0d0d12;
+  --card:#111118;
+  --roxo:#7c3aed;
+  --roxo2:#9f67ff;
+  --roxo3:#c4a5ff;
+  --texto:#f5f5f7;
+  --muted:#a6a6b0;
+  --borda:#242431;
+}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  font-family:Segoe UI,Arial,sans-serif;
+  background:
+    radial-gradient(circle at 50% -10%,rgba(124,58,237,.18),transparent 35%),
+    var(--bg);
+  color:var(--texto);
+}
+
+header{
+  padding:48px 20px 42px;
+  text-align:center;
+  border-bottom:1px solid var(--borda);
+  background:linear-gradient(180deg,#09090d,#07070a);
+}
+
+.logo{
+  margin:0;
+  font-size:clamp(2.3rem,8vw,4rem);
+  font-weight:900;
+  letter-spacing:3px;
+  background:linear-gradient(90deg,#fff,var(--roxo3),var(--roxo2));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+.creator{
+  margin:10px 0 0;
+  color:var(--muted);
+  font-size:1rem;
+  letter-spacing:1.5px;
+}
+
+.creator span{color:var(--roxo3)}
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:10;
+  display:flex;
+  justify-content:center;
+  gap:28px;
+  padding:14px 12px;
+  background:rgba(7,7,10,.9);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--borda);
+}
+
+nav a{
+  color:#d8d8df;
+  text-decoration:none;
+  font-size:.92rem;
+  font-weight:700;
+  transition:.2s;
+}
+
+nav a:hover{color:var(--roxo3)}
+
+section{
+  width:min(1250px,92%);
+  margin:auto;
+  padding:55px 0;
+}
+
+.titulo{
+  margin:0 0 24px;
+  font-size:1.8rem;
+  letter-spacing:.5px;
+}
+
+.titulo:after{
+  content:"";
+  display:block;
+  width:55px;
+  height:4px;
+  margin-top:10px;
+  border-radius:20px;
+  background:var(--roxo);
+}
+
+.destaque{
+  padding:25px;
+  border:1px solid var(--borda);
+  border-radius:18px;
+  background:linear-gradient(145deg,#111118,#0b0b0f);
+  box-shadow:0 12px 35px rgba(0,0,0,.22);
+  color:#d8d8df;
+  line-height:1.7;
+}
+
+.destaque strong{color:#fff}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+  gap:22px;
+}
+
+.card{
+  overflow:hidden;
+  border:1px solid var(--borda);
+  border-radius:18px;
+  background:var(--card);
+  box-shadow:0 10px 35px rgba(0,0,0,.25);
+  transition:.25s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  border-color:rgba(124,58,237,.75);
+  box-shadow:0 15px 45px rgba(124,58,237,.12);
+}
+
+.video{
+  width:100%;
+  aspect-ratio:16/10;
+  display:block;
+  object-fit:cover;
+  background:#050507;
+}
+
+.info{padding:20px}
+
+.card h3{
+  margin:0 0 12px;
+  font-size:1.15rem;
+}
+
+.card ul{
+  margin:0;
+  padding-left:19px;
+  color:var(--muted);
+  line-height:1.7;
+  font-size:.92rem;
+}
+
+.preco{
+  margin:18px 0;
+  font-size:1.65rem;
+  font-weight:900;
+  color:#fff;
+}
+
+.preco small{
+  font-size:.8rem;
+  color:var(--roxo3);
+  font-weight:600;
+}
+
+.botao{
+  display:block;
+  padding:14px;
+  text-align:center;
+  text-decoration:none;
+  color:#fff;
+  font-weight:800;
+  letter-spacing:.5px;
+  border-radius:10px;
+  background:linear-gradient(135deg,var(--roxo),#6127c9);
+  box-shadow:0 7px 20px rgba(124,58,237,.22);
+  transition:.2s;
+}
+
+.botao:hover{
+  transform:translateY(-1px);
+  filter:brightness(1.1);
+}
+
+.rodape-box{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px;
+}
+
+.item{
+  padding:22px;
+  border:1px solid var(--borda);
+  border-radius:16px;
+  background:#0d0d12;
+}
+
+.item h3{
+  margin-top:0;
+  color:var(--roxo3);
+}
+
+.item p{
+  margin-bottom:0;
+  color:var(--muted);
+  line-height:1.6;
+}
+
+footer{
+  margin-top:20px;
+  padding:30px 15px;
+  text-align:center;
+  color:#777783;
+  border-top:1px solid var(--borda);
+  background:#050507;
+}
+
+footer strong{color:var(--roxo3)}
+
+@media(max-width:600px){
+  nav{gap:15px;overflow-x:auto;justify-content:flex-start}
+  nav a{white-space:nowrap}
+  section{padding:40px 0}
+  .destaque{padding:20px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1 class="logo">FUSION STORE</h1>
+  <p class="creator">Created by <span>Ravenff</span></p>
+</header>
+
+<nav>
+  <a href="#inicio">Início</a>
+  <a href="#contas">Contas</a>
+  <a href="#seguranca">Segurança</a>
+  <a href="#pagamento">Pagamento</a>
+</nav>
+
+<section id="inicio">
+  <h2 class="titulo">Bem-vindo à Fusion Store</h2>
+  <div class="destaque">
+    Encontre contas de Free Fire selecionadas em um ambiente simples,
+    moderno e organizado.<br>
+    <strong>Assista ao vídeo de cada conta antes de comprar.</strong>
+  </div>
+</section>
+
+<section id="contas">
+  <h2 class="titulo">Contas disponíveis</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <video class="video" controls playsinline preload="metadata">
+        <source src="videos/conta1.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo.
+      </video>
+      <div class="info">
+        <h3>Conta Free Fire Rara</h3>
+        <ul>
+          <li>Itens exclusivos</li>
+          <li>Conta completa</li>
+          <li>Entrega após pagamento aprovado</li>
+        </ul>
+        <div class="preco">R$129,99 <small>à vista</small></div>
+        <a class="botao" href="https://pay.kirvano.com/68ac2735-5429-4c24-909c-37fa9c24b633">Comprar com Pix</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <video class="video" controls playsinline preload="metadata">
+        <source src="videos/conta2.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo.
+      </video>
+      <div class="info">
+        <h3>Conta Free Fire Premium</h3>
+        <ul>
+          <li>Skins raras</li>
+          <li>Ótimo custo-benefício</li>
+          <li>Acesso completo</li>
+        </ul>
+        <div class="preco">R$99,99 <small>à vista</small></div>
+        <a class="botao" href="https://pay.kirvano.com/ba042720-f80e-4acd-80e3-791143e3a1ae">Comprar com Pix</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <video class="video" controls playsinline preload="metadata">
+        <source src="videos/conta3.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo.
+      </video>
+      <div class="info">
+        <h3>Conta Free Fire Destaque</h3>
+        <ul>
+          <li>Boa para rank</li>
+          <li>Pronta para jogar</li>
+          <li>Acesso completo</li>
+        </ul>
+        <div class="preco">R$79,99 <small>à vista</small></div>
+        <a class="botao" href="https://pay.kirvano.com/4ba063d1-a5a7-465f-aa99-9ba6b3fd9801">Comprar com Pix</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <video class="video" controls playsinline preload="metadata">
+        <source src="videos/conta4.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo.
+      </video>
+      <div class="info">
+        <h3>Conta Free Fire Promo</h3>
+        <ul>
+          <li>Preço acessível</li>
+          <li>Entrega rápida</li>
+          <li>Conta funcional</li>
+        </ul>
+        <div class="preco">R$49,99 <small>à vista</small></div>
+        <a class="botao" href="https://pay.kirvano.com/37d88e0a-af28-40e5-a0cc-592b423aa09b">Comprar com Pix</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="seguranca">
+  <h2 class="titulo">Segurança & Entrega</h2>
+  <div class="rodape-box">
+    <div class="item">
+      <h3>Pagamento</h3>
+      <p>O pagamento é realizado através da Kirvano. Após a aprovação, siga as instruções de entrega da loja.</p>
+    </div>
+    <div class="item">
+      <h3>Entrega</h3>
+      <p>Os dados de acesso são enviados após a confirmação do pagamento aprovado.</p>
+    </div>
+    <div class="item">
+      <h3>Antes de comprar</h3>
+      <p>Confira o vídeo, a descrição e todas as informações da conta antes de finalizar a compra.</p>
+    </div>
+  </div>
+</section>
+
+<section id="pagamento">
+  <h2 class="titulo">Pagamento</h2>
+  <div class="destaque">
+    Pagamento via <strong>Kirvano (Pix)</strong>.<br>
+    Depois da aprovação, a entrega segue as condições informadas na página da conta.
+  </div>
+</section>
+
+<footer>
+  © 2026 <strong>Fusion Store</strong> — Created by Ravenff
+</footer>
+
+</body>
+</html>
